@@ -1,0 +1,71 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.container {
+    width: 90vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.seats-container {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(20, 40px);
+    /* 20개의 좌석, 각각 40px */
+    gap: 5px;
+    /* 각 좌석 사이의 간격 */
+    margin-top: 20px;
+}
+
+.seat {
+    width: 90%;
+    height: 90%;
+    background-color: #ddd;
+    border: 1px solid #888;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.seat.selected {
+    background-color: pink;
+}
+
+.occupied {
+    background-color: rgb(102, 102, 246);
+}
+
+.hidden {
+    border: none;
+    background-color: transparent;
+    color: transparent;
+}
+
+.screen {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+#screen {}
+
+#reserved {
+    position: absolute;
+    right: 50px;
+    top: 20px;
+    padding: 10px;
+    background-color: rgb(102, 102, 246);
+    border-radius: 10px;
+}
