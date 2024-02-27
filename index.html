@@ -38,9 +38,15 @@
                                 표시순서
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">최신순</a></li>
-                                <li><a class="dropdown-item" href="#">인기순</a></li>
-                                <li><a class="dropdown-item" href="#">랜덤</a></li>
+                                <li>
+                                    <div class="dropdown-item" onclick="sortAndRender('최신순')">최신순</div>
+                                </li>
+                                <li>
+                                    <div class="dropdown-item" onclick="sortAndRender('인기순')">인기순</div>
+                                </li>
+                                <li>
+                                    <div class="dropdown-item" onclick="sortAndRender('랜덤')">랜덤</div>
+                                </li>
                             </ul>
                         </li>
                         <form class="d-flex search" role="search">
@@ -62,7 +68,7 @@
                 </div>
             </div>
         </nav>
-        <div class="movies1">
+        <div class="movie1">
             상영영화 공간
         </div>
 
@@ -87,7 +93,7 @@
                 </div>
             </div>
         </nav>
-        <div class="movies2">
+        <div class="movie2">
             한국영화 및 외국영화 공간
         </div>
 

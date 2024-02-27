@@ -4050,7 +4050,7 @@ const fakeServer ={
           const dateB = new Date(b.release_date);
           return dateB - dateA;
         })
-      } else if(by =='무작위'){
+      } else if(by =='랜덤'){
         resultData = this.shuffleArray(totalData)
       } else {
         resultData = totalData;
@@ -4205,9 +4205,9 @@ const fakeServer ={
 
 // 화면을 만들어 보자
 
-let movies1List, movies2List =[]
-let popData, latestData, randomData=[]
-let koMovieList, enMovieList =[]
+let movie1List=[], movie2List =[]
+let popData=[], latestData=[], randomData=[]
+let koMovieList=[], enMovieList =[]
 let newsList =[]
 
 let totalResults =0 
@@ -4215,8 +4215,8 @@ let page =1
 let pageSize = 20 // 한페이지에 보여질 item갯수
 let guery ={}
 
-const movies1 = document.querySelector('.movies1')
-const movies2 = document.querySelector('.movies2')
+const movie1 = document.querySelector('.movie1')
+const movie2 = document.querySelector('.movie2')
 const news = document.querySelector('.news')
 
 
@@ -4230,13 +4230,8 @@ init()
 
 
 function init(){
-    const sortedData = fakeServer.sortMovie('최신순')
-    console.log('받아온 데이터', sortedData)
-    totalResults = sortedData.length;
-    console.log('totalResults :', totalResults)
     // 받은 데이터가 너무 많아서 우선 12개로만 한다.
-    movies1List = sortedData.slice(0,12);    
-    console.log('movie1List :', movies1List)
+    sortMovies('최신순') 
 
    //! 인기순으로 영화데이터받기
    popData = fakeServer.sortMovie('인기순')
@@ -4262,9 +4257,11 @@ function init(){
 
 
 function render(){   
-   //movies1 화면그리기
-   movies1.innerHTML='';
-   let movies1HTML = movies1List.map( movie =>{ 
+  console.log('map 이전 movie1List :', movie1List )
+   //movie1 화면그리기
+   movie1.innerHTML='';
+   console.log('map 이전 movie1List :', movie1List )
+   let movie1HTML = movie1List.map( movie =>{ 
         const image = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
         return `
         <div class="card" style="width: 10rem;">
@@ -4275,11 +4272,11 @@ function render(){
         </div>
     `}).join('')
 
-    movies1.innerHTML = movies1HTML;
+    movie1.innerHTML = movie1HTML;
 
-    //movies2 화면그리기
-    movies2.innerHTML=``;
-    let movies2HTML = movies2List.map( movie =>{
+    //movie2 화면그리기
+    movie2.innerHTML=``;
+    let movie2HTML = movie2List.map( movie =>{
         const image = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
         return `
         <div class="card" style="width: 10rem;">
@@ -4289,7 +4286,7 @@ function render(){
             </div>
         </div>
     `}).join('')
-    movies2.innerHTML = movies2HTML;
+    movie2.innerHTML = movie2HTML;
 
     //영화뉴스 화면
     news.innerHTML=``;
@@ -4312,13 +4309,18 @@ function render(){
 
 function getCountryMovies(nation){ // 'ko', 'en'
     query={country: nation}
-    movies2List = fakeServer.fetchData(query).movies
-    console.log(`${nation}영화 :`,movies2List )
+    movie2List = fakeServer.fetchData(query).movies
+    console.log(`${nation}영화 :`,movie2List )
     render()
 }
 
+function sortMovies(by){  //'최신순', '인기순', '랜덤'
+  movie1List = [...fakeServer.sortMovie(by)].slice(0,12); 
+  // 여기서  render()를 넣으면, render()가 중복된다.
+}
 
 
-
-
-
+function sortAndRender(by){   //'최신순','인기순','랜덤' 선택시 작동함수
+  sortMovies(by);
+  render()
+}
