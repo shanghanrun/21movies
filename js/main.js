@@ -4176,8 +4176,8 @@ const fakeServer ={
                   } 
               }
             }
-            console.log('검색결과 resultData: ', resultData)
-            console.log('아이템갯수 totalResults : ', resultData.length)
+            console.log('검색결과2 resultData: ', resultData)
+            console.log('아이템갯수2 totalResults : ', resultData.length)
     
         }
         totalResults = resultData.length
@@ -4192,6 +4192,7 @@ const fakeServer ={
         let { firstIndex, lastIndex } = this.calcDataIndex(totalResults, pageSize, page)
 
         const sendingData = resultData.slice(firstIndex, lastIndex+1)
+        console.log('sending data :', sendingData )
 
         return {
             "status": "ok",
@@ -4206,6 +4207,7 @@ const fakeServer ={
 // 화면을 만들어 보자
 
 let movie1List=[], movie2List =[]
+let searchedList=[]
 let popData=[], latestData=[], randomData=[]
 let koMovieList=[], enMovieList =[]
 let newsList =[]
@@ -4218,6 +4220,7 @@ let guery ={}
 const movie1 = document.querySelector('.movie1')
 const movie2 = document.querySelector('.movie2')
 const news = document.querySelector('.news')
+const input = document.querySelector('input')
 
 
 
@@ -4261,51 +4264,62 @@ function render(){
    //movie1 화면그리기
    movie1.innerHTML='';
    console.log('map 이전 movie1List :', movie1List )
-   let movie1HTML = movie1List.map( movie =>{ 
-        const image = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
-        return `
-        <div class="card" style="width: 10rem;">
-            <img src="${image}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">${movie.title}</p>
-            </div>
-        </div>
-    `}).join('')
-
-    movie1.innerHTML = movie1HTML;
-
-    //movie2 화면그리기
-    movie2.innerHTML=``;
-    let movie2HTML = movie2List.map( movie =>{
-        const image = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
-        return `
-        <div class="card" style="width: 10rem;">
-            <img src="${image}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">${movie.title}</p>
-            </div>
-        </div>
-    `}).join('')
-    movie2.innerHTML = movie2HTML;
-
-    //영화뉴스 화면
-    news.innerHTML=``;
-    let newsHTML = newsList.map( news =>{
-        const image = `${news.imgUrl}`;
-        return `
-        <div class="card" style="width: 20rem;">
-            <img src="${image}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">${news.title}</p>
-                <p class="card-text">${news.subtitle}</p>
-            </div>
-        </div>
-    `}).join('')
-    news.innerHTML = newsHTML;
-
-
-}
+   if(movie1List.length==0){
+      errorRender('No result found for the keyword!')
+   } else{
+     let movie1HTML = movie1List.map( movie =>{ 
+          const image = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+          return `
+          <div class="card" style="width: 10rem;">
+              <img src="${image}" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <p class="card-text">${movie.title}</p>
+              </div>
+          </div>
+      `}).join('')
   
+      movie1.innerHTML = movie1HTML;
+  
+      //movie2 화면그리기
+      movie2.innerHTML=``;
+      let movie2HTML = movie2List.map( movie =>{
+          const image = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+          return `
+          <div class="card" style="width: 10rem;">
+              <img src="${image}" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <p class="card-text">${movie.title}</p>
+              </div>
+          </div>
+      `}).join('')
+      movie2.innerHTML = movie2HTML;
+  
+      //영화뉴스 화면
+      news.innerHTML=``;
+      let newsHTML = newsList.map( news =>{
+          const image = `${news.imgUrl}`;
+          return `
+          <div class="card" style="width: 20rem;">
+              <img src="${image}" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <p class="card-text">${news.title}</p>
+                  <p class="card-text">${news.subtitle}</p>
+              </div>
+          </div>
+      `}).join('')
+      news.innerHTML = newsHTML;
+   }
+}
+
+function errorRender(message){
+    movie1.innerHTML ='';
+    const errorHTML = `
+        <div class="alert alert-danger" role="alert">
+            ${message}
+        </div>
+    `;
+    movie1.innerHTML= errorHTML;
+}
 
 function getCountryMovies(nation){ // 'ko', 'en'
     query={country: nation}
@@ -4322,5 +4336,17 @@ function sortMovies(by){  //'최신순', '인기순', '랜덤'
 
 function sortAndRender(by){   //'최신순','인기순','랜덤' 선택시 작동함수
   sortMovies(by);
+  render()
+}
+
+function search(){
+  const keyword = input.value;
+  console.log('keyword', keyword)
+  input.value = '';
+  query.country = null;
+  query.search = keyword;
+  movie1List =[]
+  movie1List = fakeServer.fetchData(query).movies
+  console.log('movie1List :',movie1List )
   render()
 }
