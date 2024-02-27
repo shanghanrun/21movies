@@ -4225,7 +4225,6 @@ const news = document.querySelector('.news')
 // let query ={country: 'en_US', page: page, pageSize: pageSize} 
 // let query ={search:"랜드", page: page, pageSize: pageSize} 
 init()
-render()
 
 
 
@@ -4251,12 +4250,12 @@ function init(){
 //    randomData = fakeServer.sortMovie('무작위')
 //    console.log('randomData :', randomData )
 
-   //!한국영화 데이터받기
-   getCountryMovies('ko')  // 'en'
-
-   //!뉴스데이터 받기
+  //!뉴스데이터 받기
     newsList = fakeServer.getNews();
     console.log('newsList :', newsList)
+
+   //!한국영화 데이터받기
+   getCountryMovies('ko')  // 'en'  
 }
 
 
