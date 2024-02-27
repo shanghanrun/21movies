@@ -4311,8 +4311,8 @@ function render(){
 }
   
 
-function getCountryMovies(nation){
-    query = query={country: nation}
+function getCountryMovies(nation){ // 'ko', 'en'
+    query={country: nation}
     movies2List = fakeServer.fetchData(query).movies
     console.log(`${nation}영화 :`,movies2List )
     render()
