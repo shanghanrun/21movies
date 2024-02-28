@@ -97,8 +97,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const value = `${y_value}${x_value}`;
 
         // 이미 선택된 좌석인 경우 클릭 이벤트를 무시합니다.
-    if (targetSeat.classList.contains('occupied')) return;
-
+        if (targetSeat.classList.contains('occupied')) return;
+        // 복도(hidden)의 경우에 클릭 이벤트를 무시한다.
+        if (targetSeat.classList.contains('hidden')) return;
+        
         if (list.includes(value)) {
             list = list.filter(item => item !== value);
         } else {
