@@ -36,6 +36,19 @@
 
         .reserve-button {
             margin-top: 100px;
+            padding: 5px;
+            background-color: pink;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .reserve-button:hover {
+            cursor: pointer;
+            transform: scale(1.5);
+        }
+
+        .transparent {
+            opacity: 0.4;
         }
     </style>
 </head>
@@ -89,11 +102,11 @@
 
         // '좌석예약' 문구 추가
         const reservationText = document.createElement('div');
-        reservationText.textContent = 'Choose One';
+        reservationText.innerHTML = '첫클릭-> 가운데 <br> 재클릭-> 원위치';
         reservationText.style.fontSize = '50px';
         reservationText.style.position = 'absolute';
-        reservationText.style.top = centerY - 38 + 'px'; // 수직 중앙 정렬
-        reservationText.style.left = centerX - 140 + 'px'; // 수평 중앙 정렬
+        reservationText.style.top = centerY - 58 + 'px'; // 수직 중앙 정렬
+        reservationText.style.left = centerX - 160 + 'px'; // 수평 중앙 정렬
         document.body.appendChild(reservationText);
 
         // 원 주변에 카드를 배치하기
@@ -139,10 +152,14 @@
             let isFirstClick = true;
             let prevAngle = 0;
             let reserveButton = null; // 변수 추가
+            let cardIndex = -1; //초기화
 
-            cards.forEach(card => {
+            cards.forEach((card, index) => {
+
                 card.addEventListener('click', function () {
                     if (isFirstClick) {
+                        cardIndex = index;
+                        console.log('1. cardIndex', cardIndex)
                         moveToCenter(card);
                         isFirstClick = false;
                         card.querySelector('img').classList.add('isSecond');
@@ -163,6 +180,13 @@
                         reserveButton.addEventListener('click', handleReserveClick);
                         card.appendChild(reserveButton);
 
+                        cards.forEach((card, i) => {
+                            console.log('2. cardIndex', cardIndex)
+                            if (i != cardIndex) {
+                                /* card.disabled = true; 안통한다. */
+                                card.classList.add('transparent');
+                            }
+                        })
                     } else {
                         rotateToPreviousAngle(card, prevAngle + 90); // 이전 각도에 90도를 더해줌
                         isFirstClick = true;
@@ -175,9 +199,17 @@
                             reserveButton = null;
                         }
 
+                        cards.forEach((card, i) => {
+                            console.log('2. cardIndex', cardIndex)
+                            if (i != cardIndex) {
+                                card.classList.remove('transparent');
+                            }
+                        })
+
                     }
                 });
             });
+
 
             function moveToCenter(card) {
                 const centerX = window.innerWidth / 2;
