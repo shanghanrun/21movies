@@ -40,8 +40,8 @@ input {
 }
 
 .flip-card {
-    width: 400px;
-    height: 592px;
+    width: 300px;
+    height: 400px;
     text-align: center;
     perspective: 1000px;
     display: inline-block;
@@ -123,5 +123,5 @@ h4 {
 
 #img2 {
     width: 99.8%;
-    height: 390px;
+    height: 160px;
 }

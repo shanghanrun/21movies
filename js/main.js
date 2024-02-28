@@ -4291,6 +4291,13 @@ function render(){
   
       //movie2 화면그리기
       movie2.innerHTML=``;
+      imgList=[]
+      movie2List.forEach(movie =>{
+        const img = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+        imgList.push(img)
+      })
+      console.log('*** 받아온 이미지들', imgList)
+
       let movie2HTML = movie2List.map( movie =>{
           const image = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
           return `
