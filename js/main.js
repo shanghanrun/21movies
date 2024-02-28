@@ -4270,13 +4270,22 @@ function render(){
      let movie1HTML = movie1List.map( movie =>{ 
           const image = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
           return `
-          <div class="card" style="width: 10rem;">
-              <img src="${image}" class="card-img-top" alt="...">
-              <div class="card-body">
-                  <p class="card-text">${movie.title}</p>
-              </div>
-          </div>
-      `}).join('')
+          <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img id='img1' src="${image}" alt="">
+                </div>
+                <div class="flip-card-back">
+                    <img id='img2' src="${image}" alt="">
+                    <h4>이름: ${movie.title}</h4>
+                    <p>${movie.overview}<br>
+                        <a class="info-link" href="">info: 상세내용</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        `
+    }).join('')
   
       movie1.innerHTML = movie1HTML;
   
