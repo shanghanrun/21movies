@@ -1,7 +1,8 @@
+let list =[];
 document.addEventListener('DOMContentLoaded', function () {
     const seatsContainer = document.querySelector('.seats-container');
     const alphabet = ['', 'A', 'B', 'C', 'D', 'X', 'E', 'F', 'G', 'H', 'I', 'X','J', 'K', 'L', 'M', 'N', 'O'];
-    let list = [];
+
     const occuppiedList = [ 
         [2, 3], [2, 5],[2,10],[2,11],
         [3,6],[3,7],[3,9],[3,10],[3,12],[3,13],
@@ -111,3 +112,10 @@ document.addEventListener('DOMContentLoaded', function () {
         event.target.classList.toggle('selected');
     });
 });
+
+function sendData(){
+    const data = JSON.stringify(list)
+    localStorage.setItem('data', data)
+    alert(`좌석이 다음과 같이 예약되었습니다.\n ${list}`)
+    window.location.href ='index.html';
+}
