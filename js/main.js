@@ -4389,7 +4389,7 @@ function makeSlide(){
 
 
 
-            const image = `https://image.tmdb.org/t/p/w500/${movie1List[i].poster_path}`;
+            const image = `https://i.tmagemdb.org/t/p/w500/${movie1List[i].poster_path}`;
 
             list.push(image);
             
@@ -4400,7 +4400,7 @@ function makeSlide(){
               let data = {
                 title: mv.title,
                 original_title: mv.original_title,
-                image: image,
+                image: mv.poster_path,
                 overview: mv.overview,
                 popularity: mv.popularity,
                 release_date: mv.release_date

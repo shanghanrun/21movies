@@ -20,6 +20,7 @@
         window.onload = function () {
             let movie1 = localStorage.getItem('movie1')
             movie1 = JSON.parse(movie1)
+            const img = `https://i.tmagemdb.org/t/p/w500/${movie1.poster_path}`;
 
             const title = document.querySelector('.title')
             title.innerText = `영화 제목 : ${movie1.title}`
@@ -33,7 +34,7 @@
             release.innerText = `발매 : ${movie2.release_date}`
 
             const image = document.querySelector('img')
-            image.src = movie1.image
+            image.src = movie1.img;
 
 
             localStorage.clear();
