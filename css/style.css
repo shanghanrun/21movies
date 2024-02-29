@@ -226,3 +226,94 @@ p {
     padding-top: 10px;
     font-size: 18px;
 }
+
+
+/* 동현 */
+.navbar-container {
+    font-family: 'Noto Sans KR', 'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.topNavbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.LogoStyle {
+    cursor: pointer;
+    margin-left: 3rem;
+}
+
+.topNav-container {}
+
+.topNav {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+
+.topNav li {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+}
+
+.topNav li img {
+    width: 30px;
+    height: 30px;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-container {
+    width: 100%;
+    font-family: 'Noto Sans KR', 'CJONLYONENEW', '맑은 고딕', '돋움', Dotum, sans-serif;
+    font-size: 100%;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    background-color: black;
+    color: azure;
+    font-size: small;
+}
+
+.footerbar-list {
+    max-width: 980px;
+    margin-left: 3rem;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    border-bottom: 2px dashed aliceblue;
+    padding-bottom: 1rem;
+
+}
+
+.footerP {
+    width: 50%;
+    margin-left: 3rem;
+    padding-bottom: 1rem;
+
+}
+
+#login,
+#singup,
+#mypage {
+    font-size: 13px;
+}
+
+#login img,
+#singup img,
+#mypage img {
+    width: 40px;
+}
+
+#login img {
+    margin-left: 20px;
+}
