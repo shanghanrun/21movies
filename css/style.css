@@ -22,20 +22,21 @@
 }
 
 .inner {
-    float: left;
+    /*float: left;*/
 }
 
 .slide-image {
-    margin-top: 80px;
+    margin-top: 70px;
     width: 70%;
     height: 300px;
     border-radius: 10px;
     transition: transform 0.4s;
+    box-shadow: 2px 1px 10px 2px rgba(0, 0, 0, 0.4);
 }
 
 .slide-image:hover {
     transform: scale(1.4);
-    box-shadow: 2 5px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 input {
@@ -219,4 +220,13 @@ h4 {
 
 .disabled {
     opacity: 0.3;
+}
+
+p {
+    margin-top: 10px;
+    border-top: 2px solid rgb(149, 166, 226);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-top: 10px;
+    font-size: 18px;
 }
