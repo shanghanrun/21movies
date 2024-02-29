@@ -4263,7 +4263,6 @@ function render(){
   console.log('map 이전 movie1List :', movie1List )
    //movie1 화면그리기
    movie1.innerHTML='';
-   console.log('map 이전 movie1List :', movie1List )
    if(movie1List.length==0){
       errorRender('No result found for the keyword!')
    } else{

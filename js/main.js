@@ -4312,7 +4312,7 @@ function render(){
           <div class="card" style="width: 20rem;">
               <img src="${image}" class="card-img-top" alt="...">
               <div class="card-body">
-                  <p class="card-text">${news.title}</p>
+                  <h4 class="card-text">${news.title}</h4>
                   <p class="card-text">${news.subtitle}</p>
               </div>
           </div>
@@ -4376,6 +4376,7 @@ function makeSlide(){
 
         container.style.width = `${containerWidthPercentage}vw`; // 컨테이너의 너비를 설정합니다.
         /*container.style.width = `${100 * dataLength}vw`;*/
+        const list=[]
         for (let i = 0; i < dataLength; i++) {
             const inner = document.createElement('div')
             inner.style.width = `${imgWidthPercentage}vw`; // 각 이미지의 너비를 설정합니다.
@@ -4386,7 +4387,12 @@ function makeSlide(){
             /* img.style.height = '300px'*/
             const button = document.createElement('button')
 
+
+
             const image = `https://image.tmdb.org/t/p/w500/${movie1List[i].poster_path}`;
+
+            list.push(image);
+            
             img.src = `${image}`;
             inner.appendChild(img)
             inner.addEventListener('click', function(){
@@ -4410,6 +4416,7 @@ function makeSlide(){
 
 
         }
+        console.log('*** 받아온이미지2: ', list)
 
         const btnContainer2 = document.createElement('div')
         btnContainer2.style.position = 'absolute';
