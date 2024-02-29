@@ -4445,8 +4445,14 @@ function makeSlide(){
         const length = Math.ceil(dataLength / imagesPerPage);
         let index = 0;
         let move = ''
+        btnPrev.classList.add('disabled')
         btnPrev.addEventListener('click', function () {
+            btnNext.classList.remove('disabled');
+            if (index == 0){
+              btnPrev.classList.add('disabled');
+            }
             if (index > 0) {
+              btnPrev.classList.remove('disabled');
                 index--
                 const scale = (index * 100).toString()
                 move = `translate(-${scale}vw)`
@@ -4455,7 +4461,12 @@ function makeSlide(){
         })
         btnNext.addEventListener('click', function () {
             console.log('index: ', index)
+            btnPrev.classList.remove('disabled');
+            if(index == length -2){
+              btnNext.classList.add('disabled');
+            }
             if (index < length - 2) {
+              btnNext.classList.remove('disabled');
                 index++
                 const scale = (index * 100).toString()
                 move = `translate(-${scale}vw)`

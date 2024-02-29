@@ -6,17 +6,23 @@
     gap: 30px;
 }
 
+.slide-body {
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+}
+
 .movie1 {
     height: 450px;
     margin-left: 0;
     position: relative;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: start;
     transition: transform 0.5s ease;
 }
 
 .inner {
-    /* float: left; */
+    float: left;
 }
 
 .slide-image {
@@ -24,13 +30,12 @@
     width: 70%;
     height: 300px;
     border-radius: 10px;
-    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
     transition: transform 0.4s;
 }
 
 .slide-image:hover {
     transform: scale(1.4);
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.8);
+    box-shadow: 2 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 input {
@@ -198,4 +203,9 @@ h4 {
 
 .news .card:hover {
     transform: none;
+}
+
+
+.disabled {
+    opacity: 0.3;
 }
