@@ -1,0 +1,33 @@
+/* 규선 상세페이지 css */
+
+body{
+    background: #e6dada; /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #e6dada, #274046); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #e6dada, #274046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.custom-height{
+    height: 80vh; /* 높이를 뷰포트 높이의 25%로 설정합니다. */
+    object-fit: contain; /* 이미지가 컨테이너를 채우면서 비율을 유지합니다. */
+    width:100%;
+}
+.background-image {
+    position: relative; /* position 속성 추가 */
+    z-index: -1;
+}
+.in-image {
+    position: relative; /* position 속성 추가 */
+    z-index: 1;
+    margin-top:799px;
+    margin-left:100px;
+}
+
+.review{
+    height:300px;
+}
+
+.form-control{
+    border-radius: 30px;
+    
+    
+    font-size : 20px;
+}
