@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+
+<body>
+    <div class="title"></div>
+    <div class="original-title"></div>
+    <img src="" alt="">
+    <p class="overview"></p>
+    <p class="pop"></p>
+
+    <script>
+        window.onload = function () {
+            let movie2 = localStorage.getItem('movie2')
+            movie2 = JSON.parse(movie2)
+            console.log('movie2 :', movie2)
+
+            const title = document.querySelector('.title')
+            title.innerText = `영화 제목: ${movie2.title}`
+            const original = document.querySelector('.original-title')
+            original.innerText = `원 제목: ${movie2.original_title}`
+            const overview = document.querySelector('.overview')
+            overview.innerText = `스토리: ${movie2.overview}`
+            const pop = document.querySelector('.pop')
+            pop.innerText = `평점: ${movie2.popularity}`
+
+            const image = document.querySelector('img')
+            image.src = movie2.image;
+
+            localStorage.clear();
+        }
+    </script>
+</body>
+
+</html>

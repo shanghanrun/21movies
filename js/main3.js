@@ -4217,8 +4217,6 @@ let page =1
 let pageSize = 20 // 한페이지에 보여질 item갯수
 let guery ={}
 
-let mv2;
-
 const movie1 = document.querySelector('.movie1')
 const movie2 = document.querySelector('.movie2')
 const news = document.querySelector('.news')
@@ -4236,7 +4234,7 @@ init()
 
 function init(){
     // 받은 데이터가 너무 많아서 우선 12개로만 한다.
-    sortMovies('랜덤') 
+    sortMovies('최신순') 
 
    //! 인기순으로 영화데이터받기
    popData = fakeServer.sortMovie('인기순')
@@ -4269,21 +4267,8 @@ function render(){
    if(movie1List.length==0){
       errorRender('No result found for the keyword!')
    } else{
-     makeSlide()
-  
-      //movie2 화면그리기
-      movie2.innerHTML=``;
-      imgList=[]
-      movie2List.forEach(movie =>{
-        const img = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
-        imgList.push(img)
-      })
-      console.log('*** 받아온 이미지들', imgList);
-
-      let movie2HTML = movie2List.map( movie =>{ 
-        const image = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
-        mv2 = {...movie} //함수인자로 넣을 객체를 분리하여, 계속 참조하지 못하도록 한다. 그리고 함수에 이상하게 안들어가서(동적으로 만든 거라서 그런 듯) 전역변수로 만들고 함수에 인자로 넣지 않았다.
-
+     let movie1HTML = movie1List.map( movie =>{ 
+          const image = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
           return `
           <div class="flip-card">
             <div class="flip-card-inner">
@@ -4293,15 +4278,36 @@ function render(){
                 <div class="flip-card-back">
                     <img id='img2' src="${image}" alt="">
                     <h4>이름: ${movie.title}</h4>
-                    <p>${movie.overview.substring(0, 88) + "..."}<br>
-                        <div class="info-link" onclick="getDetail()">info: 상세내용</div>
+                    <p>${movie.overview}<br>
+                        <a class="info-link" href="">info: 상세내용</a>
                     </p>
                 </div>
             </div>
         </div>
         `
-      }).join('')
+    }).join('')
   
+      movie1.innerHTML = movie1HTML;
+  
+      //movie2 화면그리기
+      movie2.innerHTML=``;
+      imgList=[]
+      movie2List.forEach(movie =>{
+        const img = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+        imgList.push(img)
+      })
+      console.log('*** 받아온 이미지들', imgList)
+
+      let movie2HTML = movie2List.map( movie =>{
+          const image = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+          return `
+          <div class="card" style="width: 10rem;">
+              <img src="${image}" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <p class="card-text">${movie.title}</p>
+              </div>
+          </div>
+      `}).join('')
       movie2.innerHTML = movie2HTML;
   
       //영화뉴스 화면
@@ -4339,7 +4345,7 @@ function getCountryMovies(nation){ // 'ko', 'en'
 }
 
 function sortMovies(by){  //'최신순', '인기순', '랜덤'
-  movie1List = [...fakeServer.sortMovie(by)].slice(0,40); 
+  movie1List = [...fakeServer.sortMovie(by)].slice(0,12); 
   // 여기서  render()를 넣으면, render()가 중복된다.
 }
 
@@ -4359,128 +4365,4 @@ function search(){
   movie1List = fakeServer.fetchData(query).movies
   console.log('movie1List :',movie1List )
   render()
-}
-
-
-function makeSlide(){
-  const body = document.querySelector('.slide-body')
-        // const btnContainer1 = document.createElement('div')
-        // btnContainer1.style.width = '100vw'
-        // btnContainer1.style.display = 'flex'
-        // btnContainer1.style.justifyContent = 'center'
-        const container = document.querySelector('.movie1')
-        const dataLength = movie1List.length;
-        const imagesPerPage = 5;
-        const imgWidthPercentage = 100 / imagesPerPage; // 각 이미지의 너비를 설정합니다.
-        const containerWidthPercentage = imgWidthPercentage * dataLength; // 컨테이너의 너비를 설정합니다.
-
-        container.style.width = `${containerWidthPercentage}vw`; // 컨테이너의 너비를 설정합니다.
-        /*container.style.width = `${100 * dataLength}vw`;*/
-        for (let i = 0; i < dataLength; i++) {
-            const inner = document.createElement('div')
-            inner.style.width = `${imgWidthPercentage}vw`; // 각 이미지의 너비를 설정합니다.
-            /*inner.style.width = '100vw';*/
-            const img = document.createElement('img')
-            img.classList.add('slide-image')
-            /*img.style.width = '100%'*/
-            /* img.style.height = '300px'*/
-            const button = document.createElement('button')
-
-            const image = `https://image.tmdb.org/t/p/w500/${movie1List[i].poster_path}`;
-            img.src = `${image}`;
-            inner.appendChild(img)
-            inner.addEventListener('click', function(){
-              const mv = movie1List[i];
-              let data = {
-                title: mv.title,
-                original_title: mv.original_title,
-                image: image,
-                overview: mv.overview,
-                popularity: mv.popularity,
-                release_data: mv.release_date
-              };
-              data = JSON.stringify(data);
-              localStorage.setItem('movie1', data);//나중에 지워야 된다.
-
-              window.location.href ='detail.html';
-            })
-      
-
-            container.appendChild(inner)
-
-
-        }
-
-        const btnContainer2 = document.createElement('div')
-        btnContainer2.style.position = 'absolute';
-        btnContainer2.style.top = '40%'
-        btnContainer2.style.transform = 'translateY(-50%)'
-        btnContainer2.style.display = 'flex'
-        btnContainer2.style.justifyContent = 'space-evenly'
-        btnContainer2.style.width = '90%'
-        btnContainer2.style.paddingLeft = '20px'
-        // btnContainer2.style.boxSizing = 'border-box'
-
-
-        const btnPrev = document.createElement('button')
-        const btnNext = document.createElement('button')
-        btnPrev.innerText = '<'
-        btnNext.innerText = '>'
-        btnPrev.style.backgroundColor = 'rgba(254, 173, 250, 0.7)'
-        btnPrev.style.border = 'none'
-        btnPrev.style.padding = '10px 20px'
-        btnPrev.style.cursor = 'pointer'
-        btnPrev.style.fontSize = '30px'
-        btnPrev.style.fontWeight = 'bold'
-        btnPrev.style.color = '#333131'
-
-        btnNext.style.backgroundColor = 'rgba(254, 173, 250, 0.7)'
-        btnNext.style.border = 'none'
-        btnNext.style.padding = '10px 20px'
-        btnNext.style.cursor = 'pointer'
-        btnNext.style.fontSize = '30px'
-        btnNext.style.fontWeight = 'bold'
-        btnNext.style.color = '#333131'
-
-        const length = Math.ceil(dataLength / imagesPerPage);
-        let index = 0;
-        let move = ''
-        btnPrev.addEventListener('click', function () {
-            if (index > 0) {
-                index--
-                const scale = (index * 100).toString()
-                move = `translate(-${scale}vw)`
-            }
-            container.style.transform = move;
-        })
-        btnNext.addEventListener('click', function () {
-            console.log('index: ', index)
-            if (index < length - 2) {
-                index++
-                const scale = (index * 100).toString()
-                move = `translate(-${scale}vw)`
-            }
-            container.style.transform = move;
-        })
-
-        btnContainer2.appendChild(btnPrev)
-        btnContainer2.appendChild(btnNext)
-        body.appendChild(btnContainer2)
-}
-
-function getDetail(){
-  const image = `https://image.tmdb.org/t/p/w500/${mv2.poster_path}`;
-  
-  let data = {
-    title: mv2.title,
-    original_title: mv2.original_title,
-    image: image,
-    overview: mv2.overview,
-    popularity: mv2.popularity,
-    release_data: mv2.release_date
-  };
-  data = JSON.stringify(data);
-  localStorage.setItem('movie2', data);//나중에 지워야 된다.
-
-  window.location.href ='detail2.html';
 }

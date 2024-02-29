@@ -1,36 +1,10 @@
 .search,
+.movie1,
 .movie2,
 .news {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-}
-
-.movie1 {
-    height: 450px;
-    margin-left: 0;
-    position: relative;
-    display: flex;
-    justify-content: space-evenly;
-    transition: transform 0.5s ease;
-}
-
-.inner {
-    /* float: left; */
-}
-
-.slide-image {
-    margin-top: 80px;
-    width: 70%;
-    height: 300px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
-    transition: transform 0.4s;
-}
-
-.slide-image:hover {
-    transform: scale(1.4);
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.8);
 }
 
 input {
@@ -61,7 +35,9 @@ input {
 
 
 
-
+.movie1 {
+    display: flex;
+}
 
 .flip-card {
     width: 300px;
@@ -120,7 +96,7 @@ h4 {
     padding-bottom: 0;
 }
 
-.info-link {
+.flip-card-back p a {
     display: block;
     /*좌우 텍스트 공간만 차지*/
     text-align: center;
@@ -135,7 +111,7 @@ h4 {
 
 }
 
-.info-link:hover {
+.flip-card-back p a:hover {
     background-color: dodgerblue;
 }
 
