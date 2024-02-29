@@ -4403,7 +4403,7 @@ function makeSlide(){
                 image: image,
                 overview: mv.overview,
                 popularity: mv.popularity,
-                release_data: mv.release_date
+                release_date: mv.release_date
               };
               data = JSON.stringify(data);
               localStorage.setItem('movie1', data);//나중에 지워야 된다.
@@ -4495,7 +4495,7 @@ function getDetail(){
     image: image,
     overview: mv2.overview,
     popularity: mv2.popularity,
-    release_data: mv2.release_date
+    release_date: mv2.release_date
   };
   data = JSON.stringify(data);
   localStorage.setItem('movie2', data);//나중에 지워야 된다.
