@@ -4364,10 +4364,6 @@ function search(){
 
 function makeSlide(){
   const body = document.querySelector('.slide-body')
-        // const btnContainer1 = document.createElement('div')
-        // btnContainer1.style.width = '100vw'
-        // btnContainer1.style.display = 'flex'
-        // btnContainer1.style.justifyContent = 'center'
         const container = document.querySelector('.movie1')
         const dataLength = movie1List.length;
         const imagesPerPage = 5;
@@ -4378,6 +4374,7 @@ function makeSlide(){
         /*container.style.width = `${100 * dataLength}vw`;*/
         const list=[]
         for (let i = 0; i < dataLength; i++) {
+            let mv = {...movie1List[i]};
             const inner = document.createElement('div')
             inner.style.width = `${imgWidthPercentage}vw`; // 각 이미지의 너비를 설정합니다.
             /*inner.style.width = '100vw';*/
@@ -4387,20 +4384,17 @@ function makeSlide(){
             /* img.style.height = '300px'*/
             const button = document.createElement('button')
 
-
-
-            const image = `https://image.tmdb.org/t/p/w500/${movie1List[i].poster_path}`;
+            const image = `https://image.tmdb.org/t/p/w500/${mv.poster_path}`;
 
             list.push(image);
             
-            img.src = `${image}`;
+            img.src = image;
             inner.appendChild(img)
             inner.addEventListener('click', function(){
-              const mv = movie1List[i];
               let data = {
                 title: mv.title,
                 original_title: mv.original_title,
-                image: mv.poster_path,
+                image: image,
                 overview: mv.overview,
                 popularity: mv.popularity,
                 release_date: mv.release_date
