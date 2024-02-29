@@ -20,7 +20,7 @@
         window.onload = function () {
             let movie1 = localStorage.getItem('movie1')
             movie1 = JSON.parse(movie1)
-            const img = `https://i.tmagemdb.org/t/p/w500/${movie1.poster_path}`;
+            const img = `https://image.tmdb.org/t/p/w500/${movie1.poster_path}`;
 
             const title = document.querySelector('.title')
             title.innerText = `영화 제목 : ${movie1.title}`

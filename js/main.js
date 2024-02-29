@@ -4389,7 +4389,7 @@ function makeSlide(){
 
 
 
-            const image = `https://i.tmagemdb.org/t/p/w500/${movie1List[i].poster_path}`;
+            const image = `https://image.tmdb.org/t/p/w500/${movie1List[i].poster_path}`;
 
             list.push(image);
             
