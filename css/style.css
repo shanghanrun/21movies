@@ -101,15 +101,11 @@ img {
 }
 
 .flip-card-front {
-    /*border: 10px solid;*/
-    border: 2px solid rgb(225, 224, 224);
     z-index: 2;
     border-radius: 10px;
 }
 
 .flip-card-back {
-    /*border: 10px solid;*/
-    border: 2px solid rgb(225, 224, 224);
     z-index: 1;
     transform: rotateY(180deg);
     border-radius: 10px;
