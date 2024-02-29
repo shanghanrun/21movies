@@ -32,20 +32,20 @@
                             <a class="nav-link active current" aria-current="page" href="#">상영영화</a>
                         </li>
 
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown 표시순서">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 표시순서
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <div class="dropdown-item" onclick="sortAndRender('최신순')">최신순</div>
+                                    <div class="dropdown-item 최신순" onclick="sortAndRender('최신순')">최신순</div>
                                 </li>
                                 <li>
-                                    <div class="dropdown-item" onclick="sortAndRender('인기순')">인기순</div>
+                                    <div class="dropdown-item 인기순" onclick="sortAndRender('인기순')">인기순</div>
                                 </li>
                                 <li>
-                                    <div class="dropdown-item" onclick="sortAndRender('랜덤')">랜덤</div>
+                                    <div class="dropdown-item 랜덤" onclick="sortAndRender('랜덤')">랜덤</div>
                                 </li>
                             </ul>
                         </li>
@@ -53,13 +53,13 @@
                             <input class="" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success" onclick="search()">Search</button>
                         </div>
-                        <li class="nav-item">
+                        <li class="nav-item 영화예매">
                             <a class="nav-link reserve" href="choice.html">영화예매</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item 로그인">
                             <a class="nav-link login" href="#">로그인</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item 회원가입">
                             <a class="nav-link signup" href="#">회원가입</a>
                         </li>
 

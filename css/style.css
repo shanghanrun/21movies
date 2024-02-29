@@ -149,3 +149,48 @@ h4 {
     width: 99.8%;
     height: 160px;
 }
+
+.표시순서:hover {
+    font-weight: bold;
+    background-color: pink;
+}
+
+.최신순:hover {
+    font-weight: bold;
+    background-color: pink;
+}
+
+.인기순:hover {
+    font-weight: bold;
+    background-color: pink;
+}
+
+.랜덤:hover {
+    font-weight: bold;
+    background-color: pink;
+}
+
+.영화예매:hover {
+    font-weight: bold;
+    background-color: pink;
+}
+
+.로그인:hover {
+    font-weight: bold;
+    background-color: pink;
+}
+
+.회원가입:hover {
+    font-weight: bold;
+    background-color: pink;
+}
+
+.korea:hover {
+    font-weight: bold;
+    background-color: pink;
+}
+
+.us:hover {
+    font-weight: bold;
+    background-color: pink;
+}
