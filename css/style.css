@@ -194,3 +194,8 @@ h4 {
     font-weight: bold;
     background-color: pink;
 }
+
+
+.news .card:hover {
+    transform: none;
+}

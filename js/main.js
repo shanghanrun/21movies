@@ -4100,7 +4100,7 @@ const fakeServer ={
         
     
         if(pageSize == null){
-            pageSize = 20
+            pageSize = 9
         }
         if (page == null){
             page = 1
@@ -4214,7 +4214,7 @@ let newsList =[]
 
 let totalResults =0 
 let page =1
-let pageSize = 20 // 한페이지에 보여질 item갯수
+let pageSize = 15 // 한페이지에 보여질 item갯수
 let guery ={}
 
 let mv2;
