@@ -125,7 +125,8 @@
             let seatElement = event.target.closest('.seat')
             let classListArray = Array.from(seatElement.classList);
             let room = classListArray[1]; // '2관' 클래스를 가져옴
-            let timeInfo = seatElement.querySelector('.clock').value
+            let timeInfo = seatElement.querySelector('.clock').innerText
+            console.log('timeInfo:', timeInfo)
             localStorage.setItem('room', room)
             localStorage.setItem('time', timeInfo)
             window.location.href = 'reserve.html';
