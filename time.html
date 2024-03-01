@@ -25,8 +25,8 @@
     <section class="container">
         <div class="navbar">
             <span class="navbar-brand">OTT서비스</span>
-            <span id="Home">Home</span>
-            <span id="mypage">My Page</span>
+            <span id="Home" onclick="goHome()">Home</span>
+            <span id="mypage" onclick="goMyPage()">My Page</span>
         </div>
     </section>
 
@@ -150,6 +150,13 @@
             localStorage.setItem('room', room)
             localStorage.setItem('time', timeInfo)
             window.location.href = 'reserve.html';
+        }
+
+        function goHome() {
+            window.location.href = 'index.html'
+        }
+        function goMyPage() {
+            window.location.href = 'mypage.html'
         }
     </script>
 </body>

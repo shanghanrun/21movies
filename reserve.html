@@ -19,9 +19,9 @@
     </header>
     <section class="container">
         <div class="navbar">
-            <span class="navbar-brand">OTT서비스</span>
-            <span id="Home">Home</span>
-            <span id="mypage">My Page</span>
+            <span class="navbar-brand">21Movies 상영영화</span>
+            <span id="Home" onclick="goHome()">Home</span>
+            <span id="mypage" onclick="goMyPage()">My Page</span>
         </div>
     </section>
 
@@ -68,6 +68,12 @@
             room = localStorage.getItem('room')
             roomTag = document.querySelector('#room')
             roomTag.innerText = `${room} 영화 좌석`
+        }
+        function goHome() {
+            window.location.href = 'index.html'
+        }
+        function goMyPage() {
+            window.location.href = 'mypage.html'
         }
     </script>
     <script src='js/reserve.js'></script>

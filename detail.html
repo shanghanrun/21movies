@@ -108,9 +108,9 @@
     <section class="container">
         <div class="navbar">
             <span class="navbar-brand">21Movies 상영영화</span>
-            <span id="Home">Home</span>
-            <span id="영화예매">영화예매</span>
-            <span id="mypage">My Page</span>
+            <span id="Home" onclick="goHome()">Home</span>
+            <span id="영화예매" onclick="goChoice()">영화예매</span>
+            <span id="mypage" onclick="goMyPage()">My Page</span>
         </div>
     </section>
 
@@ -147,6 +147,16 @@
 
             const img = document.querySelector('img')
             img.src = movie1.image;
+        }
+
+        function goHome() {
+            window.location.href = 'index.html'
+        }
+        function goChoice() {
+            window.location.href = 'choice.html'
+        }
+        function goMyPage() {
+            window.location.href = 'mypage.html'
         }
     </script>
 </body>

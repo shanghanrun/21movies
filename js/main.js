@@ -4401,8 +4401,11 @@ function makeSlide(){
               };
               data = JSON.stringify(data);
               localStorage.setItem('movie1', data);//나중에 지워야 된다.
-
-              window.location.href ='detail.html';
+              
+              img.style.transform = 'scale(5)';
+              setInterval(() => {
+                window.location.href ='detail.html';
+              }, 300);
             })
       
 
@@ -4494,5 +4497,5 @@ function getDetail(){
   data = JSON.stringify(data);
   localStorage.setItem('movie2', data);//나중에 지워야 된다.
 
-  window.location.href ='detail2.html';
+  window.location.href ='detail2.html';;
 }

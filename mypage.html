@@ -6,10 +6,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-
-    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            border: 2px solid gray;
+            border-radius: 10px;
+            margin-top: 30px;
+            padding: 20px;
+            box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.5);
+        }
+
         div {
             font-size: 30px;
         }
@@ -27,17 +39,37 @@
             margin-bottom: 10px;
             font-weight: bold;
         }
+
+        h1 {
+            border-bottom: 2px solid dodgerblue;
+        }
+
+        button {
+            margin: 20px auto;
+            display: block;
+            /* 위 방식으로 가운데로 옮긴다. */
+            width: 100px;
+        }
     </style>
 </head>
 
 <body>
-    <h1>My Page</h1>
-    <div id="welcomeMessage"></div>
-    <div id="reserve">예약현황</div>
-    <div id="title"></div>
-    <div id="room"></div>
-    <div id="time"></div>
-    <div id="seat"></div>
+    <div class="container">
+        <div class="card">
+            <h1>My Page</h1>
+            <div id="welcomeMessage"></div>
+            <div id="reserve">예약현황</div>
+            <div id="title"></div>
+            <div id="room"></div>
+            <div id="time"></div>
+            <div id="seat"></div>
+            <button class="btn btn-primary" onclick="goHome()">Home으로</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
     <script>
         let username;
@@ -73,6 +105,10 @@
                 document.querySelector('#seat').innerText = `예약좌석: ${seat}`;
             }
         };
+
+        function goHome() {
+            window.location.href = 'index.html'
+        }
     </script>
 
 
