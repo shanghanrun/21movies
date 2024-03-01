@@ -9,12 +9,8 @@
 </head>
 
 <body>
-    <div> 이 페이지 오기 전에, 로그인하라고 안내하고,<br>
-        로그인이 되면, 이 페이지로 이동하게 한다.
-        <br> 영화시간표에 관한 것은 일단 생략하고, 원하는 영화의 좌석예매를 진행해 본다.
-    </div>
     <div class="container">
-        <h2>영화 좌석 예약</h2>
+        <h2 id="room"></h2>
         <div class="screen">
             <h2 id="screen">Screen</h2>
         </div>
@@ -22,10 +18,16 @@
         <h3 class="result"></h3>
         <span id="reserved">예약된 좌석</span>
         <button onclick="sendData()" id="confirm">좌석예약 확정</button>
-        <div>확인버튼을 누르면, 모달창이 열리며 예약정보표시, <br> 모달창의 '확인'버튼을 누르면 홈페이지로 이동</div>
     </div>
 
-
+    <script>
+        let room;
+        window.onload = function () {
+            room = localStorage.getItem('room')
+            roomTag = document.querySelector('#room')
+            roomTag.innerText = `${room} 영화 좌석`
+        }
+    </script>
     <script src='js/reserve.js'></script>
 </body>
 

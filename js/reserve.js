@@ -114,8 +114,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function sendData(){
-    const data = JSON.stringify(list)
-    localStorage.setItem('data', data)
-    alert(`좌석이 다음과 같이 예약되었습니다.\n ${list}`)
+    const seat = JSON.stringify(list)
+    localStorage.setItem('seat', seat)
+    alert(`좌석이 다음과 같이 예약되었습니다.\n ${seat}`)
     window.location.href ='index.html';
 }

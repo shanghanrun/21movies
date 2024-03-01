@@ -19,7 +19,7 @@
         <div class="col-times">
             <div class="info-movie">
                 <span id="i15">15</span>
-                <span id="title">파묘</span>
+                <span id="title"></span>
                 <span id="onair">상영중</span>
                 <span id="etc">134분/ 2024.02.22 개봉</span>
             </div>
@@ -33,7 +33,7 @@
                 <div class="info-timetable">
                     <ul class="seats">
                         <li>
-                            <div class="seat" onclick="chooseSeat(event)">
+                            <div class="seat 4관" onclick="chooseSeat(event)">
                                 <div class="clock">09:40</div>
                                 <div class="no">
                                     <span class="sun">"해"</span>
@@ -42,13 +42,13 @@
                             </div>
                         </li>
                         <li>
-                            <div class="seat" onclick="chooseSeat(event)">
+                            <div class="seat 4관" onclick="chooseSeat(event)">
                                 <div class="clock">15:45</div>
                                 <div class="no">122석</div>
                             </div>
                         </li>
                         <li>
-                            <div class="seat" onclick="chooseSeat(event)">
+                            <div class="seat 4관" onclick="chooseSeat(event)">
                                 <div class="clock">22:15</div>
                                 <div class="no">120석</div>
                             </div>
@@ -67,7 +67,7 @@
             <div class="info-timetable">
                 <ul class="seats">
                     <li>
-                        <div class="seat" onclick="chooseSeat(event)">
+                        <div class="seat 2관" onclick="chooseSeat(event)">
                             <div class="clock">09:00</div>
                             <div class="no">
                                 <span class="sun">"해"</span>
@@ -76,31 +76,31 @@
                         </div>
                     </li>
                     <li>
-                        <div class="seat" onclick="chooseSeat(event)">
+                        <div class="seat 2관" onclick="chooseSeat(event)">
                             <div class="clock">11:45</div>
                             <div class="no">172석</div>
                         </div>
                     </li>
                     <li>
-                        <div class="seat" onclick="chooseSeat(event)">
+                        <div class="seat 2관" onclick="chooseSeat(event)">
                             <div class="clock">14:30</div>
                             <div class="no">164석</div>
                         </div>
                     </li>
                     <li>
-                        <div class="seat" onclick="chooseSeat(event)">
+                        <div class="seat 2관" onclick="chooseSeat(event)">
                             <div class="clock">17:20</div>
                             <div class="no">124석</div>
                         </div>
                     </li>
                     <li>
-                        <div class="seat" onclick="chooseSeat(event)">
+                        <div class="seat 2관" onclick="chooseSeat(event)">
                             <div class="clock">20:10</div>
                             <div class="no">154석</div>
                         </div>
                     </li>
                     <li>
-                        <div class="seat" onclick="chooseSeat(event)">
+                        <div class="seat 2관" onclick="chooseSeat(event)">
                             <div class="clock">23:00</div>
                             <div class="no">154석</div>
                         </div>
@@ -116,11 +116,19 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script>
+        window.onload = function () {
+            let title = localStorage.getItem('title')
+            let titleTag = document.querySelector('#title')
+            titleTag.innerHTML = title;
+        }
         function chooseSeat(event) {
             let seatElement = event.target.closest('.seat')
+            let classListArray = Array.from(seatElement.classList);
+            let room = classListArray[1]; // '2관' 클래스를 가져옴
             let timeInfo = seatElement.querySelector('.clock').value
-            localStorage.setItem('selectedTime', timeInfo)
-            window.location.href = 'choice.html';
+            localStorage.setItem('room', room)
+            localStorage.setItem('time', timeInfo)
+            window.location.href = 'reserve.html';
         }
     </script>
 </body>

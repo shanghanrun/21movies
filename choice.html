@@ -90,6 +90,32 @@
             'https://image.tmdb.org/t/p/w500//dfS5qHWFuXyZQnwYREwb7N4qU5p.jpg',
 
         ];
+        const titles = [
+            '인생은 아름다워',
+            'interstella',
+            '디바',
+            '블레이드러너2045',
+            '라푼젤',
+            '미션임파서블',
+            'LEO',
+            'No Way Up',
+            'Boudica',
+            'Boudica',
+            'Papao MAMA',
+            '그대들은 어떻게 살것인가',
+            'Strangers',
+            '익스펜더블4',
+            'The Farm',
+            'The Bricklayer',
+            'Menjelang Magrib',
+            '캐리비언의 해적',
+            'Demon Slayer',
+            'Grand Turismo',
+            'Super Mario Bros',
+            'The Zone of Inteest',
+            'Motal Kombat',
+            '57 Seconds'
+        ]
         // 화면의 정중앙에 원을 그리기 위한 설정
         const centerX = window.innerWidth / 2;
         const centerY = window.innerHeight / 2;
@@ -167,6 +193,7 @@
                     if (isFirstClick) {
                         cardIndex = index;
                         console.log('1. cardIndex', cardIndex)
+                        localStorage.setItem('cardIndex', cardIndex)
                         moveToCenter(card);
                         isFirstClick = false;
                         card.querySelector('img').classList.add('isSecond');
@@ -236,8 +263,11 @@
 
             function handleReserveClick() {
                 // '좌석예약' 버튼을 눌렀을 때의 동작 추가
+                let index = localStorage.getItem('cardIndex');
+                let title = titles[index]
+                localStorage.setItem('title', title)
                 console.log('좌석예약 버튼 클릭');
-                window.location.href = 'reserve.html';
+                window.location.href = 'time.html';
             }
         });
 
