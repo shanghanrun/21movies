@@ -227,6 +227,8 @@ h4 {
     background-color: rgb(174, 189, 254);
     padding: 10px;
     border-top-left-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
 }
 
 .news .card:hover {

@@ -119,7 +119,7 @@ function sendData(){
 
     const modalButton = document.querySelector('#modal-button')
     const modalBody =document.querySelector('.modal-body')
-    modalBody.innerText = `좌석이 다음과 같이 예약되었습니다. \n${seat}\n잠시 기다려 주세요...`;
+    modalBody.innerText = `\n좌석이 다음과 같이 예약되었습니다. \n\n${seat}\n자세한 정보는 My Page에서 확인해 주세요.\n\n잠시 기다려 주세요...`;
 
     // 모달 표시
     modalButton.click()
