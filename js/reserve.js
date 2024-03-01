@@ -116,6 +116,18 @@ document.addEventListener('DOMContentLoaded', function () {
 function sendData(){
     const seat = JSON.stringify(list)
     localStorage.setItem('seat', seat)
-    alert(`좌석이 다음과 같이 예약되었습니다.\n ${seat}`)
-    window.location.href ='index.html';
+
+    const modalButton = document.querySelector('#modal-button')
+    const modalBody =document.querySelector('.modal-body')
+    modalBody.innerText = `좌석이 다음과 같이 예약되었습니다. \n${seat}\n잠시 기다려 주세요...`;
+
+    // 모달 표시
+    modalButton.click()
+
+    setTimeout(()=>{
+        window.location.href ='index.html'
+    },5000)
+}
+function gotoIndex(){
+    window.location.href='index.html';
 }
