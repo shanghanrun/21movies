@@ -1,0 +1,57 @@
+* {
+    font-size: 25px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#i15 {
+    background-color: rgb(255, 85, 0);
+    color: white;
+    border-radius: 3px;
+    font-size: 50px;
+    padding: 5px;
+}
+
+#title {
+    font-size: 40px;
+}
+
+#onair {
+    color: dodgerblue;
+    border: 2px solid dodgerblue;
+    border-radius: 3px;
+}
+
+.sun {
+    color: rgb(255, 85, 0);
+}
+
+#etc {}
+
+.seats {
+    display: flex;
+    gap: 5px;
+}
+
+.seat {
+    border: 2px solid gray;
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: rgb(246, 249, 255);
+    text-align: center
+}
+
+
+.clock {
+    font-weight: bold;
+}
+
+.no {
+    color: dodgerblue;
+}
