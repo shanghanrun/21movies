@@ -10,12 +10,17 @@ a {
     text-decoration: none;
 }
 
+.container {
+    margin-top: 100px;
+}
+
 #i15 {
     background-color: rgb(255, 85, 0);
     color: white;
-    border-radius: 3px;
+    border-radius: 5px;
     font-size: 50px;
     padding: 5px;
+    padding-right: 7px;
 }
 
 #title {
@@ -28,6 +33,11 @@ a {
     border-radius: 3px;
 }
 
+.info-hall {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .sun {
     color: rgb(255, 85, 0);
 }
@@ -36,7 +46,7 @@ a {
 
 .seats {
     display: flex;
-    gap: 5px;
+    gap: 20px;
 }
 
 .seat {
@@ -47,6 +57,9 @@ a {
     text-align: center
 }
 
+.seat:hover {
+    background-color: pink;
+}
 
 .clock {
     font-weight: bold;
