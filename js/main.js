@@ -4499,3 +4499,7 @@ function getDetail(){
 
   window.location.href ='detail2.html';;
 }
+
+function message(){
+  alert('아직 공사중입니다. 양해부탁드려요~~')
+}

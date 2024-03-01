@@ -1,3 +1,8 @@
+body {
+    background-color: rgb(150, 171, 211);
+    /*z-index: 3;*/
+}
+
 .search,
 .movie2,
 .news {
@@ -110,6 +115,7 @@ img {
     z-index: 1;
     transform: rotateY(180deg);
     border-radius: 10px;
+    background: #fff;
 }
 
 .flip-card-front,
@@ -162,7 +168,7 @@ h4 {
 
 #img2 {
     width: 99.8%;
-    height: 16%;
+    height: 40%;
     transform: all 0.8s;
 }
 
@@ -199,6 +205,7 @@ h4 {
 #singup,
 #mypage {
     padding-right: 10px;
+    z-index: 2;
 }
 
 #login:hover {
@@ -264,6 +271,12 @@ p {
     margin: 0;
     padding: 0;
     border: 0;
+}
+
+.navbar {
+    padding: 0;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .topNavbar {

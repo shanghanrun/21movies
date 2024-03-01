@@ -1,32 +1,46 @@
+body {
+    background-color: rgb(150, 171, 211);
+    z-index: 3;
+}
+
+
 /* 채연님 로그인 css*/
-.main-logo {text-align: center;
+.main-logo {
+    text-align: center;
     /* border: 1px solid red; */
-    margin:  auto;
+    margin: auto;
     margin-top: 80px;
-    }
-.main{
+}
+
+.main {
     width: 330px;
     /* background-color: gray; */
     margin: 0 auto;
     /* 가운데 정렬  */
     /* border: 1px solid firebrick; */
 }
-.footer{
+
+.footer {
     text-align: center;
     font-size: 0.7rem;
     margin-top: 0.8em;
     color: #333;
 }
-#label{
-   padding-left: 15px;
-   font-size: 0.9em;
+
+#label {
+    padding-left: 15px;
+    font-size: 0.9em;
     cursor: pointer;
 }
-label{ margin-left: 1.5em;
+
+label {
+    margin-left: 1.5em;
 }
+
 label span {
     font-size: 11.5px;
 }
+
 /* 다시해보기 */
 /*
 label span::before{  border: 2px solid rgba(3, 0, 0, 0.445); content:''; display: inline-block; width: 17px; height: 17px; background-color:white;
@@ -39,70 +53,83 @@ label span::before{  border: 2px solid rgba(3, 0, 0, 0.445); content:''; display
 }
   */
 /* #checkBox{ appearance: none;} */
-ul{
+ul {
     padding-top: 20px;
 }
+
 span input {
     height: 40px;
     width: 200px;
     border: none;
-    background-color:rgb(233, 233, 233, 0.822);
+    background-color: rgb(233, 233, 233, 0.822);
     padding-left: 14px;
 }
+
 span input:focus {
     outline: none;
 }
-.error{
+
+.error {
     color: #E7223D;
     padding: 8px;
     display: none;
-    margin-top:-18px;
+    margin-top: -18px;
     /*안쳤을 때 오류났을 때만 나오게 */
     font-size: 12px;
-   margin-bottom: 0;
+    margin-bottom: 0;
 }
-.id-area{
+
+.id-area {
     background-color: rgba(233, 233, 233, 0.822);
-    border: 1px solid  rgba(233, 233, 233, 0.822);
+    border: 1px solid rgba(233, 233, 233, 0.822);
     margin-right: 12px;
     border-radius: 2em;
     padding: 3px;
     font-size: 12px;
 }
-.pw-area{
-    background-color:rgba(233, 233, 233, 0.822);
-    border: 1px solid  rgba(233, 233, 233, 0.822);
+
+.pw-area {
+    background-color: rgba(233, 233, 233, 0.822);
+    border: 1px solid rgba(233, 233, 233, 0.822);
     border-radius: 2em;
     padding: 3px;
     margin-right: 12px;
-    font-size: 12px;}
-#loginButton{
-    background-color : rgba(223, 33, 33, 0.911);
+    font-size: 12px;
+}
+
+#loginButton {
+    background-color: rgba(223, 33, 33, 0.911);
     border-radius: 0.3rem;
     border: none;
-    width: 100% ;
+    width: 100%;
     /* 부모만큼 키우기  */
     padding: 8px;
     color: white;
     box-shadow: 0 3px 2px rgba(197, 10, 10, 0.911);
 }
-#loginButton:hover {background-color: rgba(153, 5, 5, 0.911) ;
+
+#loginButton:hover {
+    background-color: rgba(153, 5, 5, 0.911);
 }
-.fa-regular{
-/* border: 1px solid #E7223D ; */
-margin-left: 1em;
-}
-.fa-solid{
+
+.fa-regular {
+    /* border: 1px solid #E7223D ; */
     margin-left: 1em;
 }
-.undernav{
+
+.fa-solid {
+    margin-left: 1em;
+}
+
+.undernav {
     text-align: center;
     padding-top: 20px;
 }
+
 .undernav a {
-   font-size: 10px;
-   text-decoration: none ;
-   color: #11131496;
-   padding-left: 1em;
-   font-size: 0.5em;
+    font-size: 10px;
+    text-decoration: none;
+    color: #11131496;
+    padding-left: 1em;
+    font-size: 0.5em;
 }
