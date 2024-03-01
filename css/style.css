@@ -188,12 +188,19 @@ h4 {
     background-color: pink;
 }
 
-.로그인:hover {
+
+
+#login:hover {
     font-weight: bold;
     background-color: pink;
 }
 
-.회원가입:hover {
+#singup:hover {
+    font-weight: bold;
+    background-color: pink;
+}
+
+#mypage:hover {
     font-weight: bold;
     background-color: pink;
 }
@@ -208,6 +215,11 @@ h4 {
     background-color: pink;
 }
 
+.container-fluid {
+    background-color: rgb(174, 189, 254);
+    padding: 10px;
+    border-top-left-radius: 10px;
+}
 
 .news .card:hover {
     transform: none;
