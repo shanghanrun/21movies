@@ -4452,11 +4452,11 @@ function makeSlide(){
 
         const btnContainer2 = document.createElement('div')
         btnContainer2.style.position = 'absolute';
-        btnContainer2.style.top = '40%'
+        btnContainer2.style.top = '25%'
         btnContainer2.style.transform = 'translateY(-50%)'
         btnContainer2.style.display = 'flex'
         btnContainer2.style.justifyContent = 'space-evenly'
-        btnContainer2.style.width = '90%'
+        btnContainer2.style.width = '100%'
         btnContainer2.style.paddingLeft = '20px'
         // btnContainer2.style.boxSizing = 'border-box'
 
