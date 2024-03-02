@@ -4401,7 +4401,7 @@ function makeSlide(){
         const container = document.querySelector('.movie1')
         const dataLength = movie1List.length;
         const imagesPerPage = 5;
-        const imgWidthPercentage = 100 / imagesPerPage; // 각 이미지의 너비를 설정합니다.
+        const imgWidthPercentage = 100 / imagesPerPage -1.5; // 각 이미지의 너비를 설정합니다.
         const containerWidthPercentage = imgWidthPercentage * dataLength; // 컨테이너의 너비를 설정합니다.
 
         container.style.width = `${containerWidthPercentage}vw`; // 컨테이너의 너비를 설정합니다.
