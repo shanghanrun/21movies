@@ -4266,7 +4266,8 @@ init()
 
 function init(){
     // 받은 데이터가 너무 많아서 우선 12개로만 한다.
-    sortMovies('랜덤') 
+    sortMovies('랜덤') // movie1은 일차로 랜덤으로 받는다.
+    //하지만 비디오링크를 하려면, '인기순'으로 받은 것으로, 상세페이지로 이동해야 된다.
 
    //! 인기순으로 영화데이터받기
    popData = fakeServer.sortMovie('인기순')
@@ -4428,7 +4429,8 @@ function makeSlide(){
                 image: image,
                 overview: mv.overview,
                 popularity: mv.popularity,
-                release_date: mv.release_date
+                release_date: mv.release_date,
+                youtube: mv.youtube
               };
               data = JSON.stringify(data);
               localStorage.setItem('movie1', data);//나중에 지워야 된다.
@@ -4525,7 +4527,8 @@ function getDetail(i){
     image: image,
     overview: mv.overview,
     popularity: mv.popularity,
-    release_date: mv.release_date
+    release_date: mv.release_date,
+    youtube: mv.youtube
   };
   data = JSON.stringify(data);
   localStorage.setItem('movie2', data);//나중에 지워야 된다.

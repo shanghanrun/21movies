@@ -123,6 +123,9 @@
                 <p class="overview"></p>
                 <p class="pop"></p>
                 <p class="release"></p>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="video embed-responsive-item" width="500px" height="300px" src="" autoplay></iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -146,6 +149,8 @@
 
             const image = document.querySelector('img')
             image.src = movie2.image;
+            const video = document.querySelector('.video')
+            video.src = `https://www.youtube.com/embed/${movie2.youtube}`;
         }
         function goHome() {
             window.location.href = 'index.html'
