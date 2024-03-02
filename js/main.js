@@ -4217,8 +4217,6 @@ let page =1
 let pageSize = 6 // 한페이지에 보여질 item갯수
 let guery ={}
 
-let mv2;
-
 const movie1 = document.querySelector('.movie1')
 const movie2 = document.querySelector('.movie2')
 const news = document.querySelector('.news')
@@ -4280,10 +4278,11 @@ function render(){
       })
       console.log('*** 받아온 이미지들', imgList);
 
-      let movie2HTML = movie2List.map( movie =>{ 
+      let movie2HTML = movie2List.map( (movie,i) =>{ 
         const image = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
-        mv2 = {...movie} //함수인자로 넣을 객체를 분리하여, 계속 참조하지 못하도록 한다. 그리고 함수에 이상하게 안들어가서(동적으로 만든 거라서 그런 듯) 전역변수로 만들고 함수에 인자로 넣지 않았다.
-
+        let mv ={...movie};
+        mv = JSON.stringify(mv)
+        localStorage.setItem(`mv${i}`, mv)
           return `
           <div class="flip-card">
             <div class="flip-card-inner">
@@ -4294,7 +4293,7 @@ function render(){
                     <img id='img2' src="${image}" alt="">
                     <h4>Title : ${movie.title}</h4>
                     <p>${movie.overview.substring(0, 88) + "..."}<br>
-                        <div class="info-link" onclick="getDetail()">info: 상세내용</div>
+                        <div class="info-link" onclick="getDetail(${i})">info: 상세내용</div>
                     </p>
                 </div>
             </div>
@@ -4483,16 +4482,18 @@ function makeSlide(){
         body.appendChild(btnContainer2)
 }
 
-function getDetail(){
-  const image = `https://image.tmdb.org/t/p/w500/${mv2.poster_path}`;
+function getDetail(i){
+  let mv = localStorage.getItem(`mv${i}`)
+  mv = JSON.parse(mv);
+  const image = `https://image.tmdb.org/t/p/w500/${mv.poster_path}`;
   
   let data = {
-    title: mv2.title,
-    original_title: mv2.original_title,
+    title: mv.title,
+    original_title: mv.original_title,
     image: image,
-    overview: mv2.overview,
-    popularity: mv2.popularity,
-    release_date: mv2.release_date
+    overview: mv.overview,
+    popularity: mv.popularity,
+    release_date: mv.release_date
   };
   data = JSON.stringify(data);
   localStorage.setItem('movie2', data);//나중에 지워야 된다.
