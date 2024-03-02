@@ -67,7 +67,7 @@
 
     .text-content {
         /* 나머지 텍스트 요소들에 대한 스타일 */
-        width: 80%;
+        width: 100%;
     }
 
     .navbar {
@@ -97,6 +97,15 @@
         background-color: pink;
         cursor: pointer;
     }
+
+    .text-content {
+        position: relative;
+    }
+
+    .video {
+        width: 100%;
+        height: 400px;
+    }
 </style>
 
 <body>
@@ -125,8 +134,8 @@
                 <p class="overview"></p>
                 <p class="pop"></p>
                 <p class="release"></p>
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="video embed-responsive-item" width="500px" height="300px" src="" autoplay></iframe>
+                <div class="embed-responsive">
+                    <iframe class="video embed-responsive-item" src="" autoplay></iframe>
                 </div>
 
             </div>
