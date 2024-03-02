@@ -2221,7 +2221,7 @@ const fakeServer ={
       "id": 1026436,
       "original_language": "en",
       "original_title": "Miller's Girl",
-      "overview": "내 이름은 아서, 방금 300만 구독자를 돌파한 거대한 인터넷 스타야. 축하 파티를 열며 잔디나, 우주가 이 새끼야 알고나 빌어먹을 파멸을 가져다주고 내 밤을 짧게 맞춰버렸어. 완벽한 숙취가 예상되었던 것이 대단한 생존 전투로 바뀌어버렸어.",
+      "overview": "조숙한 젊은 작가가 고등학교 문예창작 교사와 함께 교수와 제자 사이의 모호한 감정적 연결선을 조사하는 어두운 성장 드라마에 참여하게 됩니다.",
       "popularity": 701.592,
       "poster_path": "/wKCKKur7LyGFaUHmNhvy7FhIjmC.jpg",
       "release_date": "2024-01-18",
