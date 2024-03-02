@@ -76,8 +76,10 @@ input {
     margin-left: 100px;
 }
 
-.reserve {
-    margin-left: 60px;
+.영화예매 {
+    margin-left: 40px;
+    background-color: rgb(111, 109, 255);
+    border-radius: 5px;
 }
 
 
@@ -189,11 +191,13 @@ h4 {
 .표시순서:hover {
     font-weight: bold;
     background-color: pink;
+    border-radius: 5px;
 }
 
 .최신순:hover {
     font-weight: bold;
     background-color: pink;
+    border-radius: 5px;
 }
 
 .인기순:hover {
@@ -204,11 +208,13 @@ h4 {
 .랜덤:hover {
     font-weight: bold;
     background-color: pink;
+    border-radius: 5px;
 }
 
 .영화예매:hover {
     font-weight: bold;
     background-color: pink;
+    border-radius: 5px;
 }
 
 #login,
@@ -221,26 +227,31 @@ h4 {
 #login:hover {
     font-weight: bold;
     background-color: pink;
+    border-radius: 5px;
 }
 
 #singup:hover {
     font-weight: bold;
     background-color: pink;
+    border-radius: 5px;
 }
 
 #mypage:hover {
     font-weight: bold;
     background-color: pink;
+    border-radius: 5px;
 }
 
 .korea:hover {
     font-weight: bold;
     background-color: pink;
+    border-radius: 5px;
 }
 
 .us:hover {
     font-weight: bold;
     background-color: pink;
+    border-radius: 5px;
 }
 
 .container-fluid {
@@ -363,9 +374,7 @@ li a {
 #login img,
 #singup img,
 #mypage img {
-    width: 40px;
+    width: 35px;
 }
 
-#login img {
-    margin-left: 20px;
-}
+#login img {}
