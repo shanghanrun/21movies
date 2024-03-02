@@ -4326,8 +4326,8 @@ function render(){
                 </div>
                 <div class="flip-card-back">
                     <img id='img2' src="${image}" alt="">
-                    <h4>Title : ${movie.title}</h4>
-                    <p>${movie.overview.substring(0, 88) + "..."}<br>
+                    <h4>Title : ${movie.title.substring(0, 9)}</h4>
+                    <p>${movie.overview.substring(0, 70) + "..."}<br>
                         <div class="info-link" onclick="getDetail(${i})">info: 상세내용</div>
                     </p>
                 </div>
