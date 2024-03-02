@@ -63,13 +63,19 @@
         crossorigin="anonymous"></script>
 
     <script>
+        window.onload = function () {
+            let loggedIn = localStorage.getItem('loggedIn')
+            if (loggedIn == 'true') {
+                alert('이미 로그인 되어 있습니다.\n바로 영화예매가 가능합니다.\n다른 계정으로 로그인하고 싶으시다면 계속 진행해 주세요.')
+            }
+        }
         function login() {
             let userName = document.querySelector('#userName').value;
             let userPassword = document.querySelector('#userPassword').value;
             //자동로그인 여부 가져오기
             let isChecked = document.querySelector('#checkBox').checked;
 
-            localStorage.setItem('login', 'true')
+            localStorage.setItem('loggedIn', 'true')
             localStorage.setItem('username', userName);
             localStorage.setItem('password', userPassword);
 

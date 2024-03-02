@@ -4240,6 +4240,7 @@ const fakeServer ={
 
 // 화면을 만들어 보자
 
+let loggedIn = localStorage.getItem('loggedIn')   // 처음에는 null
 let movie1List=[], movie2List =[]
 let searchedList=[]
 let popData=[], latestData=[], randomData=[]
@@ -4250,6 +4251,7 @@ let totalResults =0
 let page =1
 let pageSize = 6 // 한페이지에 보여질 item갯수
 let guery ={}
+
 
 const movie1 = document.querySelector('.movie1')
 const movie2 = document.querySelector('.movie2')
@@ -4294,7 +4296,8 @@ function init(){
 
 
 
-function render(){   
+function render(){
+
   console.log('map 이전 movie1List :', movie1List )
    //movie1 화면그리기
    movie1.innerHTML='';
@@ -4437,7 +4440,7 @@ function makeSlide(){
               data = JSON.stringify(data);
               localStorage.setItem('movie1', data);//나중에 지워야 된다.
               
-              img.style.transform = 'scale(5)';
+              img.style.transform = 'scale(8)';
               setInterval(() => {
                 window.location.href ='detail.html';
               }, 300);
@@ -4540,4 +4543,13 @@ function getDetail(i){
 
 function message(){
   alert('아직 공사중입니다. 양해부탁드려요~~')
+}
+
+function getChoice(){
+  if(loggedIn == 'true'){
+    window.location.href='choice.html';
+  } else{
+    alert('로그인을 해야 영화예매가 가능합니다.\n로그인부터 진행해 주세요.~^^')
+  }
+
 }
