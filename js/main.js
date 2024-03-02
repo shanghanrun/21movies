@@ -1924,7 +1924,8 @@ const fakeServer ={
           "title": "Forrest Gump",
           "video": false,
           "vote_average": 8.477,
-          "vote_count": 26210
+          "vote_count": 26210,
+          "youtube":"7IIBp1HQlWQ&list=PLLWBphTHcHs9JsEYJhddZxj1tcsBwfrpN"
         },
         {
           "adult": false,
@@ -3941,7 +3942,8 @@ const fakeServer ={
       "title": "포레스트 검프",
       "video": false,
       "vote_average": 8.478,
-      "vote_count": 26211
+      "vote_count": 26211,
+      "youtube":"7IIBp1HQlWQ&list=PLLWBphTHcHs9JsEYJhddZxj1tcsBwfrpN"
     },
     {
       "adult": false,
