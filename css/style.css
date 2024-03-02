@@ -27,6 +27,16 @@ body {
     margin-bottom: 20px;
 }
 
+.poster-body {
+    border: 14px solid rgb(41, 41, 60);
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .movie1 {
     height: 300px;
     margin-left: 0;
@@ -86,7 +96,7 @@ input {
 
 
 .movie2 {
-    width: 85vw;
+    width: 100;
 }
 
 img {
