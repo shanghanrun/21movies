@@ -232,6 +232,7 @@ h4 {
 }
 
 #login,
+#logout,
 #singup,
 #mypage {
     padding-right: 10px;
@@ -239,6 +240,12 @@ h4 {
 }
 
 #login:hover {
+    font-weight: bold;
+    background-color: pink;
+    border-radius: 5px;
+}
+
+#logout:hover {
     font-weight: bold;
     background-color: pink;
     border-radius: 5px;
@@ -380,15 +387,23 @@ li a {
 }
 
 #login,
-#singup,
+#logout #singup,
 #mypage {
     font-size: 13px;
+}
+
+#logout {
+    font-size: 12px;
 }
 
 #login img,
 #singup img,
 #mypage img {
     width: 35px;
+}
+
+#logout img {
+    width: 25px;
 }
 
 #login img {}

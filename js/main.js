@@ -4585,3 +4585,12 @@ function getChoice(){
   }
 
 }
+function logout(){
+  localStorage.setItem('loggedIn', 'false')
+  localStorage.setItem('username', '')
+  localStorage.setItem('title', '')
+  localStorage.setItem('room', '')
+  localStorage.setItem('time', '')
+  localStorage.setItem('seat', '')
+  window.location.href='index.html'; //혹은 render() 해서 화면을 고친다.
+}
