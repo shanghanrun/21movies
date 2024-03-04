@@ -3,6 +3,41 @@ body {
     /*z-index: 3;*/
 }
 
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    font-size: 50px;
+}
+
+.movie-preview {
+    display: flex;
+    justify-content: center;
+}
+
+.contents {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.video_wrap {
+    width: 100%;
+    /* 부모 요소인 .movie-preview의 너비를 100%로 설정 */
+    overflow: hidden;
+    /* 내부 콘텐츠가 넘칠 때 오버플로우를 숨김 */
+}
+
+
+.video {
+    width: 100%;
+    /* 비디오 요소의 너비를 100%로 설정 */
+    height: auto;
+    /* 비디오의 높이를 자동으로 설정하여 비디오의 가로세로 비율을 유지 */
+}
+
 .search,
 .movie2,
 .news {

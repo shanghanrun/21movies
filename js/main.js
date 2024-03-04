@@ -4166,7 +4166,7 @@ const fakeServer ={
         
     
         if(pageSize == null){
-            pageSize = 9
+            pageSize = 6
         }
         if (page == null){
             page = 1
